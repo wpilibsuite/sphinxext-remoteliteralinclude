@@ -17,3 +17,8 @@ Simply just use it as you normally would a normal ``literalinclude``
    :lineno-start: 10
 ```
 
+## Important Notes
+
+This is simply a modification of the normal literalinclude extension. Near all of the code is the exact same. Modifications are made by Eli Barnett, with pip module creation by Dalton Smith. 
+
+Using the extension to reference local files **will not** work. Use the regular ``literalinclude`` extension in that case.
