@@ -5,14 +5,14 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="sphinxcontrib-remoteliteralinclude",
-    version="0.0.1",
+    version="0.0.2",
     author="Eli Barnett, Dalton Smith",
     author_email="daltzsmith@gmail.com",
     description="Extending literalinclude to include remote URLs",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/daltz333/sphinxcontrib-remoteliteralinclude",
-    packages=setuptools.find_packages(),
+    packages=['sphinxcontrib'],
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
