@@ -1,0 +1,3 @@
+# Ignore publishing directories
+build/
+dist/
