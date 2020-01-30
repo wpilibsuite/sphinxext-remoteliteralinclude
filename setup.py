@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="sphinxcontrib-remoteliteralinclude",
-    version="0.0.3",
+    version="0.0.4",
     author="Eli Barnett, Dalton Smith",
     author_email="daltzsmith@gmail.com",
     description="Extending literalinclude to include remote URLs",
