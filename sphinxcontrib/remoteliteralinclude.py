@@ -66,7 +66,7 @@ class RemoteLiteralIncludeReader(object):
         
         if text:
             if not response.status_code == requests.codes.ok:
-                raise ValueError('HTTP request returned error code:', response.status_code)
+                raise ValueError('HTTP request returned error code %s' % status_code)
                 
             if 'tab-width' in self.options:
                 text = text.expandtabs(self.options['tab-width'])
@@ -132,7 +132,7 @@ class RemoteLiteralIncludeReader(object):
         if linespec:
             linelist = parselinenos(linespec, len(lines))
             if any(i >= len(lines) for i in linelist):
-                raise ValueError('Line number spec is out of range (1 -', len(lines), ')')
+                raise ValueError('Line number spec is out of range (1 - %s)' % len(lines))
 
             if 'lineno-match' in self.options:
                 # make sure the line list is not "disjoint".
