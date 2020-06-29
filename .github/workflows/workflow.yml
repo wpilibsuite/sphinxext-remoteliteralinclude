@@ -30,7 +30,7 @@ jobs:
   pypi-release:
     needs: test-extension
     runs-on: ubuntu-latest
-    if: contains(github.ref, "refs/tags/")
+    if: contains(github.ref, 'refs/tags/')
     steps:
       - uses: actions/checkout@v2
         with:
