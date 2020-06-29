@@ -1,16 +1,16 @@
-# sphinxcontrib-remoteliteralinclude
+# sphinxext-remoteliteralinclude
 Sphinx extension that extends the ``literalinclude`` directive to allow remote URLS
 
 ## Installation
 
-``python3 -m pip install sphinxcontrib-remoteliteralinclude``
+``python3 -m pip install sphinxext-remoteliteralinclude``
 
 ## Usage
 
 Simply just use it as you normally would a normal ``literalinclude``
 
 ```
-.. remoteliteralinclude:: https://example.com/example.java
+.. rli:: https://example.com/example.java
    :language: java
    :lines: 10-29
    :linenos:

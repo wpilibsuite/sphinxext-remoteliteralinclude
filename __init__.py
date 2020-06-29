@@ -1,1 +1,1 @@
-name="sphinxcontrib-remoteliteralinclude"
+name="sphinxext.remoteliteralinclude"
