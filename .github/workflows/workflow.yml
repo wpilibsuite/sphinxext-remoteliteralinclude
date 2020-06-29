@@ -18,15 +18,16 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python-version }}
-      - name: "Install dependencies"
+      - name: Install dependencies
         run: |
           set -xe
           python -VV
           python -m site
           python -m pip install --upgrade pip setuptools wheel
           python -m pip install -r dev-requirements.txt
-      - name: "Run Tests for ${{ matrix.python-version }}"
-        run: "python -m pytest -vv"
+      - name: Run Tests for ${{ matrix.python-version }}
+        run: |
+        python -m pytest -vv
   pypi-release:
     needs: test-extension
     runs-on: ubuntu-latest
@@ -43,7 +44,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r ./dev-requirements.txt
-      - name: "Build PyPI Wheel"
+      - name: Build PyPI Wheel
         run: |
           python setup.py sdist
           python setup.py bdist_wheel
