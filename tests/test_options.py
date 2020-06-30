@@ -1,5 +1,4 @@
 import pytest
-import re
 
 @pytest.mark.sphinx("html", testroot="simple")
 def test_simple(app):
@@ -9,4 +8,4 @@ def test_simple(app):
 
     html = ('<span class="n">Example</span> <span class="n">Domain</span>')
 
-    assert re.search(html, content, re.S)
+    assert html in content
