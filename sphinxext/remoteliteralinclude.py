@@ -319,4 +319,4 @@ class RemoteLiteralInclude(SphinxDirective):
             return [document.reporter.warning(text_type(exc), line=self.lineno)]
 
 def setup(app):
-    directives.register_directive('remoteliteralinclude', RemoteLiteralInclude)
+    directives.register_directive('rli', RemoteLiteralInclude)
