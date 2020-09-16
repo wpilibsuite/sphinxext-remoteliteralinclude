@@ -66,7 +66,7 @@ class RemoteLiteralIncludeReader(object):
         
         if text:
             if not response.status_code == requests.codes.ok:
-                raise ValueError('HTTP request returned error code %s' % status_code)
+                raise ValueError('HTTP request returned error code %s' % response.status_code)
                 
             if 'tab-width' in self.options:
                 text = text.expandtabs(self.options['tab-width'])
