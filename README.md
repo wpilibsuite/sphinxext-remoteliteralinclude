@@ -1,4 +1,4 @@
-# sphinxext-remoteliteralinclude
+# sphinxext-remoteliteralinclude - an amazing project
 Sphinx extension that extends the ``literalinclude`` directive to allow remote URLS
 
 ## Installation
