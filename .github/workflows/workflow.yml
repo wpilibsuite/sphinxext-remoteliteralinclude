@@ -14,7 +14,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ['3.6', '3.7',  '3.8', 'pypy3']
+        python-version: ['3.6', '3.7',  '3.8', '3.9', 'pypy3']
+        sphinx-version: ['2', '3']
     steps:
       - uses: actions/checkout@v2
       - name: Setup Python
@@ -28,6 +29,7 @@ jobs:
           python -m site
           python -m pip install --upgrade pip setuptools wheel
           python -m pip install -r dev-requirements.txt
+          python -m pip install -r ${{ matrix.sphinx-version }}
       - name: Run Tests for ${{ matrix.python-version }}
         run: |
           python -m pytest -vv
