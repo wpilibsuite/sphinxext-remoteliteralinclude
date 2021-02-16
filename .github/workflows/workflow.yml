@@ -16,6 +16,7 @@ jobs:
       matrix:
         python-version: ['3.6', '3.7',  '3.8', '3.9', 'pypy3']
         sphinx-version: ['2', '3']
+    name: "Test Extension - Python(${{ matrix.python-version }}), Sphinx(${{ matrix.sphinx-version }})"
     steps:
       - uses: actions/checkout@v2
       - name: Setup Python
@@ -29,7 +30,7 @@ jobs:
           python -m site
           python -m pip install --upgrade pip setuptools wheel
           python -m pip install -r dev-requirements.txt
-          python -m pip install -r sphinx==${{ matrix.sphinx-version }}
+          python -m pip install sphinx==${{ matrix.sphinx-version }}
       - name: Run Tests for ${{ matrix.python-version }}
         run: |
           python -m pytest -vv
