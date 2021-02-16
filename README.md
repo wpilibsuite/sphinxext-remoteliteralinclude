@@ -1,4 +1,7 @@
 # sphinxext-remoteliteralinclude
+
+![CI](https://github.com/wpilibsuite/sphinxext-remoteliteralinclude/workflows/CI/badge.svg)
+
 Sphinx extension that extends the ``literalinclude`` directive to allow remote URLS
 
 ## Installation
