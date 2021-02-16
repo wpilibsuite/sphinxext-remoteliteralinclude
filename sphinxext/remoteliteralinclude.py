@@ -320,3 +320,4 @@ class RemoteLiteralInclude(SphinxDirective):
 
 def setup(app):
     directives.register_directive('rli', RemoteLiteralInclude)
+    directives.register_directive('remoteliteralinclude', RemoteLiteralInclude)
