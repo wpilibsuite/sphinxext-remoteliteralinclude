@@ -1,6 +1,6 @@
 name: Test and Deploy
 on:
-  push:
+  [push, pr]:
     branches:
       - main
   create:
