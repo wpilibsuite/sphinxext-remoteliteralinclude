@@ -1,9 +1,20 @@
 # sphinxext-remoteliteralinclude
+
+![CI](https://github.com/wpilibsuite/sphinxext-remoteliteralinclude/workflows/CI/badge.svg)
+
 Sphinx extension that extends the ``literalinclude`` directive to allow remote URLS
 
 ## Installation
 
+Please install the extension via pip using the following command:
+
 ``python3 -m pip install sphinxext-remoteliteralinclude``
+
+then in your ``conf.py`` under ``extensions``, it should look like the following:
+
+```python
+extensions = ["sphinxext.remoteliteralinclude"]
+```
 
 ## Usage
 

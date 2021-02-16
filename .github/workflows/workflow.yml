@@ -1,17 +1,33 @@
-name: Test and Deploy
+name: CI
 on:
   push:
+    branches:
+      - main
+  pull_request:
     branches:
       - main
   create:
     tags:
       - '*'
 jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+    - name: Black
+      run: |
+        pip install black
+        black --check --exclude /docs --diff .
   test-extension:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ['3.6', '3.7',  '3.8', 'pypy3']
+        python-version: ['3.6', '3.7',  '3.8', '3.9', 'pypy3']
+        sphinx-version: ['2', '3']
+    name: "Test Extension - Python(${{ matrix.python-version }}), Sphinx(${{ matrix.sphinx-version }})"
     steps:
       - uses: actions/checkout@v2
       - name: Setup Python
@@ -25,6 +41,7 @@ jobs:
           python -m site
           python -m pip install --upgrade pip setuptools wheel
           python -m pip install -r dev-requirements.txt
+          python -m pip install sphinx==${{ matrix.sphinx-version }}
       - name: Run Tests for ${{ matrix.python-version }}
         run: |
           python -m pytest -vv
