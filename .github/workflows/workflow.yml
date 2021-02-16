@@ -1,6 +1,9 @@
-name: Test and Deploy
+name: CI
 on:
-  [push, pr]:
+  push:
+    branches:
+      - main
+  pull_request:
     branches:
       - main
   create:

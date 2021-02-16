@@ -1,14 +1,17 @@
 import setuptools
 import subprocess
 
-ret = subprocess.run(
-    "git describe --tags --abbrev=0",
-    stdout=subprocess.PIPE,
-    stderr=subprocess.PIPE,
-    check=True,
-    shell=True,
-)
-version = ret.stdout.decode("utf-8").strip()
+try:
+    ret = subprocess.run(
+        "git describe --tags --abbrev=0",
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        check=True,
+        shell=True,
+    )
+    version = ret.stdout.decode("utf-8").strip()
+except:
+    version = "main"
 
 
 with open("README.md", "r", encoding="utf-8") as fh:
@@ -23,7 +26,7 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/wpilibsuite/sphinxext-remoteliteralinclude",
-    install_requires=["sphinx>=2.0"],
+    install_requires=["sphinx>=2.0", "six"],
     packages=["sphinxext"],
     classifiers=[
         "Development Status :: 5 - Production/Stable",
