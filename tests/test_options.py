@@ -24,6 +24,7 @@ def test_simple_full(app: Sphinx):
 
     assert html in content
 
+
 def read_text(app: Sphinx):
     if version_info[:2] < (3, 0):
         return (app.outdir / "index.html").text().replace("\n", "")

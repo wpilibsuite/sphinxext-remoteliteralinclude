@@ -340,9 +340,10 @@ class RemoteLiteralInclude(SphinxDirective):
         except Exception as exc:
             return [document.reporter.warning(text_type(exc), line=self.lineno)]
 
+
 def setup(app):
-    directives.register_directive('rli', RemoteLiteralInclude)
-    directives.register_directive('remoteliteralinclude', RemoteLiteralInclude)
+    directives.register_directive("rli", RemoteLiteralInclude)
+    directives.register_directive("remoteliteralinclude", RemoteLiteralInclude)
 
     return {
         "parallel_read_safe": True,
