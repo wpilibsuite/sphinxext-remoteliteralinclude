@@ -10,7 +10,6 @@ from docutils.statemachine import ViewList
 from six import text_type
 
 from sphinx import addnodes
-from sphinx.deprecation import RemovedInSphinx40Warning
 from sphinx.locale import __
 from sphinx.util import logging
 from sphinx.util import parselinenos
