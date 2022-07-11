@@ -1,3 +1,4 @@
+import os
 import pytest
 from sphinx.application import Sphinx
 from sphinx import version_info
@@ -45,7 +46,8 @@ def test_pyobject():
     reader = RemoteLiteralIncludeReader(url, options, DUMMY_CONFIG)
     content, lines = reader.read()
 
-    second_line = "    INVALID_OPTIONS_PAIR = [\n"  # this keeps \n because no splitlines
+    # we use os.linesep to replace with \n on posix and \r\n on windows
+    second_line = f"    INVALID_OPTIONS_PAIR = [{os.linesep}"  # this keeps \n because no splitlines
     assert content == second_line
 
 
