@@ -1,5 +1,6 @@
 -e .
 sphinx
 six
+black
 pytest==5.4.3
 wheel==0.34.2

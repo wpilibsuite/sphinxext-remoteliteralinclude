@@ -8,6 +8,7 @@ from sphinxext.remoteliteralinclude import RemoteLiteralIncludeReader
 
 DUMMY_CONFIG = Config({}, {})
 
+
 @pytest.mark.sphinx("html", testroot="simple-short")
 def test_simple_short(app: Sphinx):
     app.build()
@@ -33,7 +34,7 @@ def test_simple_full(app: Sphinx):
 def test_pyobject():
     url = "https://raw.githubusercontent.com/wpilibsuite/sphinxext-remoteliteralinclude/main/sphinxext/remoteliteralinclude.py"
     # Grab the entire RemoteLiteralIncludeReader.__init__
-    options = {'pyobject': 'RemoteLiteralIncludeReader.__init__'}
+    options = {"pyobject": "RemoteLiteralIncludeReader.__init__"}
     reader = RemoteLiteralIncludeReader(url, options, DUMMY_CONFIG)
     content, lines = reader.read()
 
