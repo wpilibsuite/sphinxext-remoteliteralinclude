@@ -1,3 +1,4 @@
+-e .
 sphinx
 six
 pytest==5.4.3
