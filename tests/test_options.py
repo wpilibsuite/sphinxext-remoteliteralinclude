@@ -9,26 +9,34 @@ from sphinxext.remoteliteralinclude import RemoteLiteralIncludeReader
 DUMMY_CONFIG = Config({}, {})
 
 
-@pytest.mark.sphinx("html", testroot="simple-short")
-def test_simple_short(app: Sphinx):
-    app.build()
+def test_simple_short():
+    # Use a known stable example website
+    url = "http://example.com/"
+    options = {"lines": "4-4"}
+    # grab the html on lines 4
+    reader = RemoteLiteralIncludeReader(url, options, DUMMY_CONFIG)
+    content, lines = reader.read()
 
-    content = read_text(app)
+    actual_content = f"    <title>Example Domain</title>{os.linesep}"
 
-    html = '<span class="n">Example</span> <span class="n">Domain</span>'
+    # Check lines 4, and that it only returned 1 line
+    assert content == actual_content
+    assert lines == 1
 
-    assert html in content
 
+def test_simple_full():
+    # Use a known stable example website
+    url = "http://example.com/"
+    options = {}
+    # grab the html
+    reader = RemoteLiteralIncludeReader(url, options, DUMMY_CONFIG)
+    content, lines = reader.read()
 
-@pytest.mark.sphinx("html", testroot="simple-full")
-def test_simple_full(app: Sphinx):
-    app.build()
+    sub_content = f"    <title>Example Domain</title>{os.linesep}"
 
-    content = read_text(app)
-
-    html = '<span class="n">Example</span> <span class="n">Domain</span>'
-
-    assert html in content
+    # Check a subcontent to make it more robust to their website changing
+    assert sub_content in content
+    assert lines == 46
 
 
 def test_pyobject():
