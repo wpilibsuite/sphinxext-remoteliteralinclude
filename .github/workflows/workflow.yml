@@ -25,8 +25,21 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ['3.6', '3.7',  '3.8', '3.9', 'pypy3']
-        sphinx-version: ['2', '3', '4', '5']
+        python-version: ['3.8', '3.9', 'pypy3']
+        sphinx-version: ['4', '5']
+        include:
+          - python-version: '3.10'
+            sphinx-version: '4.3'
+          - python-version: '3.10'
+            sphinx-version: '5'
+          - python-version: '3.6'
+            sphinx-version: '3'
+          - python-version: '3.7'
+            sphinx-version: '3'
+          - python-version: '3.6'
+            sphinx-version: '2'
+          - python-version: '3.7'
+            sphinx-version: '2'
     name: "Test Extension - Python(${{ matrix.python-version }}), Sphinx(${{ matrix.sphinx-version }})"
     steps:
       - uses: actions/checkout@v2
