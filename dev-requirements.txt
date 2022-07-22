@@ -1,4 +1,4 @@
-sphinx
-six
-pytest==5.4.3
+-e .
+black
+pytest==6.2.5
 wheel==0.34.2

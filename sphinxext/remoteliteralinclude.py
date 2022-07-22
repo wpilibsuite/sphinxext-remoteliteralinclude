@@ -118,8 +118,14 @@ class RemoteLiteralIncludeReader(object):
         if pyobject:
             from sphinx.pycode import ModuleAnalyzer
 
-            analyzer = ModuleAnalyzer.for_file(self.url, "")
+            # read the url in as a string
+            response = requests.get(self.url)
+            text = response.text
+            # initialize the module analyzer with the file in string form
+            analyzer = ModuleAnalyzer.for_string(text, "")
+
             tags = analyzer.find_tags()
+            # Check the pyobject passed is in the tags
             if pyobject not in tags:
                 raise ValueError(
                     __("Object named %r not found in include file %r")

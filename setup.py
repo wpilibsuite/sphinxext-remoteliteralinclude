@@ -26,7 +26,12 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/wpilibsuite/sphinxext-remoteliteralinclude",
-    install_requires=["sphinx>=2.0", "six"],
+    install_requires=[
+        "sphinx>=4.3;python_version>='3.10'",
+        "jinja2<3;python_version<'3.8'",
+        "MarkupSafe<=2.0.1;python_version<'3.8'",
+        "six",
+    ],
     packages=["sphinxext"],
     classifiers=[
         "Development Status :: 5 - Production/Stable",
@@ -40,6 +45,8 @@ setuptools.setup(
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
         "Programming Language :: Python",
         "Topic :: Documentation :: Sphinx",
         "Topic :: Documentation",
@@ -47,5 +54,5 @@ setuptools.setup(
         "Topic :: Text Processing",
         "Topic :: Utilities",
     ],
-    python_requires=">=3.4",
+    python_requires=">=3.6",
 )
