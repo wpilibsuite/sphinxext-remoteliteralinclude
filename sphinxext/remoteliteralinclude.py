@@ -2,6 +2,7 @@ import codecs
 import requests
 import sys
 import warnings
+
 from difflib import unified_diff
 
 from docutils import nodes
@@ -62,14 +63,13 @@ class RemoteLiteralIncludeReader(object):
         # try:
         # with codecs.open(url, 'r', self.encoding, errors='strict') as f:  # type: ignore  # NOQA
         #     text = f.read()  # type: unicode
-        response = requests.get(url)
+        response = requests.get(
+            url, headers={"User-Agent": "sphinxext-remoteliteralinclude"}
+        )
         text = response.text
 
         if text:
-            if not response.status_code == requests.codes.ok:
-                raise ValueError(
-                    "HTTP request returned error code %s" % response.status_code
-                )
+            response.raise_for_status()
 
             if "tab-width" in self.options:
                 text = text.expandtabs(self.options["tab-width"])
