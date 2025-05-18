@@ -6,7 +6,13 @@ from sphinx.config import Config
 from sphinxext.remoteliteralinclude import RemoteLiteralIncludeReader
 
 
-DUMMY_CONFIG = Config({}, {})
+DUMMY_CONFIG = Config(
+    {
+        "remoteliteralinclude_max_retry_time": 5,
+        "remoteliteralinclude_retry_time": 1,
+    },
+    {},
+)
 
 
 @pytest.mark.sphinx("html", testroot="simple-short")
