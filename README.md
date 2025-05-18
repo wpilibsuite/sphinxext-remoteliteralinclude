@@ -16,6 +16,17 @@ then in your ``conf.py`` under ``extensions``, it should look like the following
 extensions = ["sphinxext.remoteliteralinclude"]
 ```
 
+## Configuration
+
+There are two optional configuration for retry logic for failed requests.
+
+```python
+remoteliteralinclude_retry_time = 1.0
+remoteliteralinclude_max_retry_time = 180.0
+```
+
+The retry_time is the base time in seconds to wait, with an exponential backoff until max_retry_time (in seconds) is reached.
+
 ## Usage
 
 Simply just use it as you normally would a normal ``literalinclude``
