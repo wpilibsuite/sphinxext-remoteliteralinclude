@@ -60,10 +60,10 @@ class RemoteLiteralIncludeReader(object):
     def read_file(self, url, location=None):
         # type: (unicode, Any) -> List[unicode]
         max_retry_time = self.options.get(
-            "max_retry_time", self.config.remoteliteralinclude_max_retry_time
+            "remoteliteralinclude_max_retry_time", self.config.remoteliteralinclude_max_retry_time
         )
         base_retry_time = self.options.get(
-            "retry_time", self.config.remoteliteralinclude_retry_time
+            "remoteliteralinclude_retry_time", self.config.remoteliteralinclude_retry_time
         )
 
         total_time = 0  # Track total retry time
