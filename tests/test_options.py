@@ -35,6 +35,8 @@ def test_pyobject():
     url = "https://raw.githubusercontent.com/wpilibsuite/sphinxext-remoteliteralinclude/main/sphinxext/remoteliteralinclude.py"
     # Grab the entire RemoteLiteralIncludeReader.__init__
     options = {"pyobject": "RemoteLiteralIncludeReader.__init__"}
+    DUMMY_CONFIG.add("remoteliteralinclude_max_retry_time", 5.0, "env", float)
+    DUMMY_CONFIG.add("remoteliteralinclude_retry_time", 1.0, "env", float)
     reader = RemoteLiteralIncludeReader(url, options, DUMMY_CONFIG)
     content, lines = reader.read()
 
