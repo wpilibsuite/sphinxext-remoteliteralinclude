@@ -1,4 +1,4 @@
 -e .
 black
 pytest==6.2.5
-wheel==0.40.0
+wheel==0.46.2
