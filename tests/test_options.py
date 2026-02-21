@@ -5,7 +5,6 @@ from sphinx import version_info
 from sphinx.config import Config
 from sphinxext.remoteliteralinclude import RemoteLiteralIncludeReader
 
-
 DUMMY_CONFIG = Config({}, {})
 
 
