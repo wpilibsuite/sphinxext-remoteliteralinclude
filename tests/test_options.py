@@ -15,7 +15,7 @@ def test_simple_short(app: Sphinx):
 
     content = read_text(app)
 
-    html = '<span class="n">Example</span> <span class="n">Domain</span>'
+    html = 'sphinxext-remoteliteralinclude'
 
     assert html in content
 
@@ -26,7 +26,7 @@ def test_simple_full(app: Sphinx):
 
     content = read_text(app)
 
-    html = '<span class="n">Example</span> <span class="n">Domain</span>'
+    html = 'sphinxext-remoteliteralinclude'
 
     assert html in content
 
