@@ -1,4 +1,4 @@
 Test Documentation
 
-.. rli:: https://example.com/
+.. rli:: http://example.com/
    :lines: 1-
