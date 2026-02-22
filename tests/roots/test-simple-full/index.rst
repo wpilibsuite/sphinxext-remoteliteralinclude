@@ -1,2 +1,4 @@
-.. rli:: http://example.com/
-   :lines: 4-4
+Test Documentation
+
+.. rli:: https://example.com/
+   :lines: 1-
