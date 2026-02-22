@@ -2,7 +2,6 @@ import pytest
 from sphinx.application import Sphinx
 from sphinx.testing.path import path
 
-
 pytest_plugins = "sphinx.testing.fixtures"
 
 

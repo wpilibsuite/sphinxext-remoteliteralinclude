@@ -5,7 +5,6 @@ from sphinx import version_info
 from sphinx.config import Config
 from sphinxext.remoteliteralinclude import RemoteLiteralIncludeReader
 
-
 DUMMY_CONFIG = Config({}, {})
 
 
@@ -15,7 +14,7 @@ def test_simple_short(app: Sphinx):
 
     content = read_text(app)
 
-    html = 'sphinxext-remoteliteralinclude'
+    html = "sphinxext-remoteliteralinclude"
 
     assert html in content
 
@@ -26,7 +25,7 @@ def test_simple_full(app: Sphinx):
 
     content = read_text(app)
 
-    html = 'sphinxext-remoteliteralinclude'
+    html = "sphinxext-remoteliteralinclude"
 
     assert html in content
 
