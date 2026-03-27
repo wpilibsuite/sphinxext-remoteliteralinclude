@@ -29,6 +29,8 @@ jobs:
             sphinx-version: '5.*'
           - python-version: '3.14'
             sphinx-version: '5.*'
+          - python-version: '3.14'
+            sphinx-version: '6.*'
     name: "Test Extension - Python(${{ matrix.python-version }}), Sphinx(${{ matrix.sphinx-version }})"
     steps:
       - uses: actions/checkout@v6
